@@ -29,7 +29,7 @@ void nim_plateau_init(int plateau[], int nb_colonnes);
 
 /********************************************************************************/
 
-/*fonction min qui commence
+/*fonction nim_qui_commence
 
 Fonction qui détermine, aléatoirement, qui doit jouer en premier
 
@@ -84,4 +84,5 @@ int nim_qui_commence(void) {
 }
 
 /*Fonction tour*/
-int nim_jouer_tour(int plateau[], int nb_colonnes, int colonne, int nb_pieces){}
+int nim_jouer_tour(int plateau[], int nb_colonnes, int colonne, int nb_pieces){
+}
