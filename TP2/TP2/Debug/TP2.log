@@ -1,7 +1,2 @@
-﻿  main.c
-c:\users\pre-instaled\documents\github\155-tp2\tp2\tp2\main.c(14): error C2059: erreur de syntaxe : ':'
-  m_distributions.c
-  nim_ihm.c
-  tp2.c
-c:\users\pre-instaled\documents\github\155-tp2\tp2\tp2\tp2.c(7): warning C4101: 'choix_menu' : variable locale non référencée
-  Génération de code en cours...
+﻿  nim_io.c
+  TP2.vcxproj -> C:\Users\Francis\Documents\GitHub\155-TP2.2\TP2\Debug\TP2.exe
