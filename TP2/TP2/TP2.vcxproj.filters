@@ -24,10 +24,10 @@
     <ClCompile Include="m_distributions.c">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
-    <ClCompile Include="nim_ihm.c">
+    <ClCompile Include="tp2.c">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
-    <ClCompile Include="nim_io.c">
+    <ClCompile Include="nim_ihm.c">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
     <ClCompile Include="nim.c">
@@ -45,9 +45,6 @@
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
     <ClInclude Include="nim_ihm.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="nim_io.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
   </ItemGroup>

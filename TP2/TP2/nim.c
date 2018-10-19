@@ -41,7 +41,7 @@ int nim_qui_commence(void);
 
 /********************************************************************************/
 
-/*fonction min qui commence
+/*fonction tour
 
 Applique des changements à la configuration du plateau de jeu en retirant
 "nb_pieces" de la colonne "colonne" du plateau.
@@ -84,4 +84,17 @@ int nim_qui_commence(void) {
 }
 
 /*Fonction tour*/
-int nim_jouer_tour(int plateau[], int nb_colonnes, int colonne, int nb_pieces){}
+int nim_jouer_tour(int plateau[], int nb_colonnes, int colonne, int nb_pieces){
+
+	// Déclaration de variable
+	int validite;
+
+	if (plateau[colonne] - nb_pieces >= 0 && colonne > nb_colonnes) {
+		plateau[colonne] -= nb_pieces;
+			validite = 1;
+	}
+	else {
+		validite = 0;
+	}
+	return validite;
+}

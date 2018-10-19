@@ -119,14 +119,13 @@
     <ClCompile Include="m_distributions.c" />
     <ClCompile Include="nim.c" />
     <ClCompile Include="nim_ihm.c" />
-    <ClCompile Include="nim_io.c" />
+    <ClCompile Include="tp2.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="curses.h" />
     <ClInclude Include="curspriv.h" />
     <ClInclude Include="m_distributions.h" />
     <ClInclude Include="nim_ihm.h" />
-    <ClInclude Include="nim_io.h" />
   </ItemGroup>
   <ItemGroup>
     <Object Include="curses\addch.obj" />
