@@ -13,6 +13,9 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="curses">
+      <UniqueIdentifier>{6ee7d44a-e48e-45a2-b5e7-49ad6747297a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.c">
@@ -41,5 +44,157 @@
     <ClInclude Include="nim_ihm.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Object Include="curses\addch.obj">
+      <Filter>curses</Filter>
+    </Object>
+    <Object Include="curses\addchstr.obj">
+      <Filter>curses</Filter>
+    </Object>
+    <Object Include="curses\addstr.obj">
+      <Filter>curses</Filter>
+    </Object>
+    <Object Include="curses\attr.obj">
+      <Filter>curses</Filter>
+    </Object>
+    <Object Include="curses\beep.obj">
+      <Filter>curses</Filter>
+    </Object>
+    <Object Include="curses\bkgd.obj">
+      <Filter>curses</Filter>
+    </Object>
+    <Object Include="curses\border.obj">
+      <Filter>curses</Filter>
+    </Object>
+    <Object Include="curses\clear.obj">
+      <Filter>curses</Filter>
+    </Object>
+    <Object Include="curses\color.obj">
+      <Filter>curses</Filter>
+    </Object>
+    <Object Include="curses\debug.obj">
+      <Filter>curses</Filter>
+    </Object>
+    <Object Include="curses\delch.obj">
+      <Filter>curses</Filter>
+    </Object>
+    <Object Include="curses\deleteln.obj">
+      <Filter>curses</Filter>
+    </Object>
+    <Object Include="curses\deprec.obj">
+      <Filter>curses</Filter>
+    </Object>
+    <Object Include="curses\getch.obj">
+      <Filter>curses</Filter>
+    </Object>
+    <Object Include="curses\getstr.obj">
+      <Filter>curses</Filter>
+    </Object>
+    <Object Include="curses\getyx.obj">
+      <Filter>curses</Filter>
+    </Object>
+    <Object Include="curses\inch.obj">
+      <Filter>curses</Filter>
+    </Object>
+    <Object Include="curses\inchstr.obj">
+      <Filter>curses</Filter>
+    </Object>
+    <Object Include="curses\initscr.obj">
+      <Filter>curses</Filter>
+    </Object>
+    <Object Include="curses\inopts.obj">
+      <Filter>curses</Filter>
+    </Object>
+    <Object Include="curses\insch.obj">
+      <Filter>curses</Filter>
+    </Object>
+    <Object Include="curses\insstr.obj">
+      <Filter>curses</Filter>
+    </Object>
+    <Object Include="curses\instr.obj">
+      <Filter>curses</Filter>
+    </Object>
+    <Object Include="curses\kernel.obj">
+      <Filter>curses</Filter>
+    </Object>
+    <Object Include="curses\keyname.obj">
+      <Filter>curses</Filter>
+    </Object>
+    <Object Include="curses\mouse.obj">
+      <Filter>curses</Filter>
+    </Object>
+    <Object Include="curses\move.obj">
+      <Filter>curses</Filter>
+    </Object>
+    <Object Include="curses\outopts.obj">
+      <Filter>curses</Filter>
+    </Object>
+    <Object Include="curses\overlay.obj">
+      <Filter>curses</Filter>
+    </Object>
+    <Object Include="curses\pad.obj">
+      <Filter>curses</Filter>
+    </Object>
+    <Object Include="curses\panel.obj">
+      <Filter>curses</Filter>
+    </Object>
+    <Object Include="curses\pdcclip.obj">
+      <Filter>curses</Filter>
+    </Object>
+    <Object Include="curses\pdcdisp.obj">
+      <Filter>curses</Filter>
+    </Object>
+    <Object Include="curses\pdcgetsc.obj">
+      <Filter>curses</Filter>
+    </Object>
+    <Object Include="curses\pdckbd.obj">
+      <Filter>curses</Filter>
+    </Object>
+    <Object Include="curses\pdcscrn.obj">
+      <Filter>curses</Filter>
+    </Object>
+    <Object Include="curses\pdcsetsc.obj">
+      <Filter>curses</Filter>
+    </Object>
+    <Object Include="curses\pdcutil.obj">
+      <Filter>curses</Filter>
+    </Object>
+    <Object Include="curses\printw.obj">
+      <Filter>curses</Filter>
+    </Object>
+    <Object Include="curses\refresh.obj">
+      <Filter>curses</Filter>
+    </Object>
+    <Object Include="curses\scanw.obj">
+      <Filter>curses</Filter>
+    </Object>
+    <Object Include="curses\scr_dump.obj">
+      <Filter>curses</Filter>
+    </Object>
+    <Object Include="curses\scroll.obj">
+      <Filter>curses</Filter>
+    </Object>
+    <Object Include="curses\slk.obj">
+      <Filter>curses</Filter>
+    </Object>
+    <Object Include="curses\termattr.obj">
+      <Filter>curses</Filter>
+    </Object>
+    <Object Include="curses\terminfo.obj">
+      <Filter>curses</Filter>
+    </Object>
+    <Object Include="curses\touch.obj">
+      <Filter>curses</Filter>
+    </Object>
+    <Object Include="curses\tui.obj">
+      <Filter>curses</Filter>
+    </Object>
+    <Object Include="curses\util.obj">
+      <Filter>curses</Filter>
+    </Object>
+    <Object Include="curses\window.obj">
+      <Filter>curses</Filter>
+    </Object>
   </ItemGroup>
 </Project>
