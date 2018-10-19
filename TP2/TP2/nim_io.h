@@ -23,4 +23,15 @@ fonctions du module « nim_ihm » décrit ci-dessous.*/
 
 int lire_entier(int min, int max);
 
+/* Fonction plateau_afficher
+	Description : Affiche la configuration du plateau à l'écran. Elle affiche chacune des
+	colonnes en mettant une pièce par ligne, selon le nombre de pièces présentes
+	dans la colonne en question.
+	Paramètres :
+		- 
+
+*/
+
+void plateau_afficher(const int plateau[], int nb_colonnes);
+
 

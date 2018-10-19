@@ -2,7 +2,7 @@
 
 #include "nim_io.h"
 
-// Fonction Lire_entier
+// Fonction lire_entier
 
 int lire_entier(int min, int max) {
 
@@ -21,5 +21,10 @@ int lire_entier(int min, int max) {
 
 }
 
+// Fonction plateau_afficher
  
+void plateau_afficher(const int plateau[], int nb_colonnes) {
+
+
+}
 
