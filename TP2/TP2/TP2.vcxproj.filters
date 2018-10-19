@@ -18,6 +18,9 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="main.c">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
     <ClCompile Include="m_distributions.c">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
@@ -27,7 +30,7 @@
     <ClCompile Include="nim_io.c">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
-    <ClCompile Include="tp2.c">
+    <ClCompile Include="nim.c">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
   </ItemGroup>
