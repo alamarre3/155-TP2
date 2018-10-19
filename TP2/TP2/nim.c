@@ -13,7 +13,8 @@ Date: 2018-10-19
 #include <stdlib.h>
 #include <stdio.h>
 #include "m_distributions.h"
-#define BORNE_TAB 35
+#define BORNE_TAB 20
+#define BORNE_PIECE 35
 
 //===============déclaration pour le fichier.h================
 
@@ -79,7 +80,18 @@ SORTIES le nouveau nombre de colones.
 */
 int nim_plateau_defragmenter(int plateau[], int nb_colonnes);
 
+/********************************************************************************/
 
+/*Fonction nombre aléatroie.
+
+Fonction qui effectue un jeu aléatoire en choisissant au hasard une colonne,
+puis au hasard le nombre de pièces à jouer de cette colonne.
+
+PARAMETRE(S) le plateau le nombre de colone du tableau et les pointeur des choix,
+
+SORTIES aucun.
+*/
+void nim_choix_ia_aleatoire(const int plateau[], int nb_colonnes, int * choix_colonne, int * choix_nb_pieces);
 
 
 
@@ -91,10 +103,10 @@ void nim_plateau_init(int plateau[], int nb_colonnes) {
 
 	// Déclaration de variables
 	int i;
-	md_srand_interne();
+	
 
 	for (i = 0; i < nb_colonnes; i++) {
-		int plateau[i] = md_randi(BORNE_TAB);
+		int plateau[i] = md_randi(BORNE_PIECE);
 	}
 }
 
@@ -110,6 +122,7 @@ int nim_qui_commence(void) {
 
 	return personne;
 }
+
 
 /*Fonction tour*/
 int nim_jouer_tour(int plateau[], int nb_colonnes, int colonne, int nb_pieces){
@@ -127,6 +140,7 @@ int nim_jouer_tour(int plateau[], int nb_colonnes, int colonne, int nb_pieces){
 	return validite;
 }
 
+
 /*fonction supprimer tableau*/
 void nim_plateau_supprimer_colonne(int plateau[], int nb_colonnes, int col_a_supprimer) {
 
@@ -134,11 +148,12 @@ void nim_plateau_supprimer_colonne(int plateau[], int nb_colonnes, int col_a_sup
 
 	for (i = col_a_supprimer; i < nb_colonnes-1; i++) {
 
-		plateau[i]=plateau[i+1]
+		plateau[i] = plateau[i + 1];
 	}
 
 	plateau[nb_colonnes] = 0;
 }
+
 
 /*fonction defragmenter.*/
 int nim_plateau_defragmenter(int plateau[], int nb_colonnes) {
@@ -146,12 +161,12 @@ int nim_plateau_defragmenter(int plateau[], int nb_colonnes) {
 // Déclaration de variable.
 	int i;
 	int compteur=0; 
-	int nv_nb_colonnes
+	int nv_nb_colonnes;
 
 	for (i = 0; i < nb_colonnes; i++) {
 
 		if (plateau[i] == 0) {
-			nim_plateau_supprimer_colonne(plateau[], nb_colonnes, i);
+			nim_plateau_supprimer_colonne(plateau, nb_colonnes, i);
 			compteur++;
 		}
 	}
@@ -159,4 +174,13 @@ int nim_plateau_defragmenter(int plateau[], int nb_colonnes) {
 
 	nv_nb_colonnes = nb_colonnes - compteur;
 	return nv_nb_colonnes;
+}
+
+
+/*Fonction nombre aléatroie.*/
+void nim_choix_ia_aleatoire(const int plateau[], int nb_colonnes, int * choix_colonne, int * choix_nb_pieces) {
+
+	*choix_colonne= md_randi(nb_colonnes);
+
+	*choix_nb_pieces= md_randi(plateau[*choix_colonne]);
 }
