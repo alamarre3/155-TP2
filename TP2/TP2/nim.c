@@ -56,6 +56,34 @@ int nim_jouer_tour(int plateau[], int nb_colonnes, int colonne, int nb_pieces);
 
 /********************************************************************************/
 
+/*fonction supprimer tableau
+
+Supprime la colonne col_a_supprimer du plateau.
+
+PARAMETRE(S) le plateau le nombre de colone du tableau et la colone a suprimer,
+
+SORTIES aucun
+*/
+void nim_plateau_supprimer_colonne(int plateau[], int nb_colonnes, int col_a_supprimer);
+
+/********************************************************************************/
+
+/*fonction defragmenter.
+
+Fonction qui supprime les colonnes vides du tableau en utilisant la fonction
+nim_plateau_supprimer_colonne
+
+PARAMETRE(S) le plateau le nombre de colone du tableau,
+
+SORTIES le nouveau nombre de colones.
+*/
+int nim_plateau_defragmenter(int plateau[], int nb_colonnes);
+
+
+
+
+
+
 
 
 /*Fonction nim_plateau*/
@@ -97,4 +125,38 @@ int nim_jouer_tour(int plateau[], int nb_colonnes, int colonne, int nb_pieces){
 		validite = 0;
 	}
 	return validite;
+}
+
+/*fonction supprimer tableau*/
+void nim_plateau_supprimer_colonne(int plateau[], int nb_colonnes, int col_a_supprimer) {
+
+	int i;
+
+	for (i = col_a_supprimer; i < nb_colonnes-1; i++) {
+
+		plateau[i]=plateau[i+1]
+	}
+
+	plateau[nb_colonnes] = 0;
+}
+
+/*fonction defragmenter.*/
+int nim_plateau_defragmenter(int plateau[], int nb_colonnes) {
+
+// Déclaration de variable.
+	int i;
+	int compteur=0; 
+	int nv_nb_colonnes
+
+	for (i = 0; i < nb_colonnes; i++) {
+
+		if (plateau[i] == 0) {
+			nim_plateau_supprimer_colonne(plateau[], nb_colonnes, i);
+			compteur++;
+		}
+	}
+
+
+	nv_nb_colonnes = nb_colonnes - compteur;
+	return nv_nb_colonnes;
 }
