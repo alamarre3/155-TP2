@@ -1,7 +1,9 @@
 ﻿  main.c
-c:\users\pre-instaled\documents\github\155-tp2\tp2\tp2\main.c(14): error C2059: erreur de syntaxe : ':'
-  m_distributions.c
-  nim_ihm.c
-  tp2.c
-c:\users\pre-instaled\documents\github\155-tp2\tp2\tp2\tp2.c(7): warning C4101: 'choix_menu' : variable locale non référencée
+  nim.c
+c:\users\pre-instaled\documents\github\155-tp2\tp2\tp2\nim.c(26): error C2057: expression constante attendue
+c:\users\pre-instaled\documents\github\155-tp2\tp2\tp2\nim.c(26): error C2466: impossible d'allouer un tableau de taille constante 0
+c:\users\pre-instaled\documents\github\155-tp2\tp2\tp2\nim.c(26): error C2143: erreur de syntaxe : absence de ')' avant 'type'
+c:\users\pre-instaled\documents\github\155-tp2\tp2\tp2\nim.c(26): error C2198: 'md_randi' : pas assez d'arguments pour un appel
+c:\users\pre-instaled\documents\github\155-tp2\tp2\tp2\nim.c(26): error C2059: erreur de syntaxe : ')'
+c:\users\pre-instaled\documents\github\155-tp2\tp2\tp2\nim.c(26): error C2075: 'plateau' : l'initialisation du tableau nécessite une liste d'initialiseurs entre accolades
   Génération de code en cours...
