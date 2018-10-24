@@ -1,6 +1,5 @@
-﻿  nim_ihm.c
-  nim_io.c
-c:\users\francis\documents\github\155-tp2.2\tp2\tp2\nim_io.c(5): fatal error C1083: Impossible d'ouvrir le fichier include : 'nim.h' : No such file or directory
-  tp2.c
-c:\users\francis\documents\github\155-tp2.2\tp2\tp2\tp2.c(7): warning C4101: 'choix_menu' : variable locale non référencée
-  Génération de code en cours...
+﻿  nim_io.c
+c:\users\francis\documents\github\155-tp2.2\tp2\tp2\nim_io.c(32): warning C4101: 'y' : variable locale non référencée
+c:\users\francis\documents\github\155-tp2.2\tp2\tp2\nim_io.c(32): warning C4101: 'i' : variable locale non référencée
+LINK : warning LNK4098: conflit entre la bibliothÞque par dÚfaut 'LIBCMT' et les autres bibliothÞquesá; utilisez /NODEFAULTLIB:library
+  TP2.vcxproj -> C:\Users\Francis\Documents\GitHub\155-TP2.2\TP2\Debug\TP2.exe
