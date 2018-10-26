@@ -15,16 +15,23 @@ int main(int argc, char *argv[])
 		return EXIT_FAILURE;
 	}
 	
-	ihm_printf("Choisir la difficulte de l'ordinateur.\n");
-	ihm_printf("1- Facile\n");
-	ihm_printf("2- Moyen\n");
-	ihm_printf("3- Difficile\n");
-	ihm_printf("4- Quittez le jeu :(\n");
-	ihm_printf("Votre choix : ");
-	ihm_scanf("%lf", &choix_menu);
-	
-	demarrer_jeu(choix_menu);
+	do {
+		ihm_printf("Choisir la difficulte de l'ordinateur.\n");
+		ihm_printf("1- Facile\n");
+		ihm_printf("2- Moyen\n");
+		ihm_printf("3- Difficile\n");
+		ihm_printf("4- Quittez le jeu :(\n");
+		ihm_printf("Votre choix : ");
+		ihm_scanf("%lf", &choix_menu);
 
-	ihm_pause();
-	return 0;
+		if (choix_menu == 4) {
+			return 0;
+		}
+
+		demarrer_jeu(choix_menu);
+		ihm_pause();
+
+		ihm_effacer_ecran();
+
+	} while (choix_menu != 4);
 }
