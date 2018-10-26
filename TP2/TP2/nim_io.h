@@ -1,3 +1,6 @@
+#ifndef NIM_IO_H_
+#define NIM_IO_H_
+
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdlib.h>
 
@@ -60,3 +63,5 @@ void tour_humain(int plateau[], int nb_colonnes);
 		- aucune */
 
 void tour_ia(int plateau[], int nb_colonnes, double difficulte);
+
+#endif

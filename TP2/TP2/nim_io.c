@@ -4,9 +4,6 @@
 #include "nim_ihm.h"
 #include "nim.h"
 
-#define NB_LIGNES 35
-#define MIN_PIECES 1
-
 // Fonction lire_entier
 
 int lire_entier(int min, int max) {
@@ -31,9 +28,9 @@ void plateau_afficher(const int plateau[], int nb_colonnes) {
 	// Déclaration de variables
 	int i, y; // Valeur d'incrémentation
 
-	ihm_changer_taille_plateau(NB_LIGNES, nb_colonnes);
+	ihm_changer_taille_plateau(BORNE_PIECE, nb_colonnes);
 
-	for (i = 0; i < NB_LIGNES; i++) {
+	for (i = 0; i < BORNE_PIECE; i++) {
 
 		for (y = 0; y < nb_colonnes; y++) {
 			if (plateau[i] > i) {
