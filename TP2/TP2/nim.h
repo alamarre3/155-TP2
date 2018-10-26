@@ -3,6 +3,7 @@
 
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdlib.h>
+#include "m_distributions.h"
 #define BORNE_TAB 20
 #define BORNE_PIECE 35
 #define MIN_PIECES 1

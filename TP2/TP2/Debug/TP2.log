@@ -1,4 +1,3 @@
 ﻿  nim_io.c
-c:\users\francis\documents\github\155-tp2.2\tp2\tp2\nim_io.c(53): warning C4047: '=' : les niveaux d'indirection de 'int' et de 'int (__cdecl *)(void)' sont différents
-c:\users\francis\documents\github\155-tp2.2\tp2\tp2\nim_io.c(92): warning C4047: '=' : les niveaux d'indirection de 'int' et de 'int (__cdecl *)(void)' sont différents
+c:\users\francis\documents\github\155-tp2.2\tp2\tp2\nim_io.c(85): warning C4047: 'initialisation' : les niveaux d'indirection de 'int *' et de 'int (*)[20]' sont différents
   TP2.vcxproj -> C:\Users\Francis\Documents\GitHub\155-TP2.2\TP2\Debug\TP2.exe

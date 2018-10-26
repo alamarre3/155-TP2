@@ -16,7 +16,7 @@ int lire_entier(int min, int max) {
 		return entier;
 	}
 	else {
-		ihm_printf("Valeur saisie non valide, veuillez saisir une valeur dans l'intervalle %d et %d.\n", min, max);
+		ihm_printf("Valeur non valide.\n Veuillez saisir une valeur dans l'intervalle %d et %d.\n", min, max);
 		return -1;
 	}
 }
@@ -30,11 +30,11 @@ void plateau_afficher(const int plateau[], int nb_colonnes) {
 
 	ihm_changer_taille_plateau(BORNE_PIECE, nb_colonnes);
 
-	for (i = 0; i < BORNE_PIECE; i++) {
+	for (i = 0; i < nb_colonnes; i++) {
 
-		for (y = 0; y < nb_colonnes; y++) {
-			if (plateau[i] > i) {
-				ihm_ajouter_piece(i, y);
+		for (y = 0; y < BORNE_PIECE; y++) {
+			if (plateau[i] > y) {
+				ihm_ajouter_piece(y, i);
 			}
 		}
 	}
@@ -48,14 +48,13 @@ void tour_humain(int plateau[], int nb_colonnes) {
 	int colonne; // Colonne choisi par l'usager
 	int pieces = -1; // Nombre de pièces saisies par l'usager
 
-	ihm_printf(" ===== TOUR HUMAIN =====");
-	ihm_printf("Choisir une colonne du plateau.");
-	colonne = ihm_choisir_colonne;
-	ihm_printf("Choisir un nombre de pièces entre 1 et %d : ", plateau[colonne]);
+	ihm_printf(" ===== TOUR HUMAIN =====\n");
+	ihm_printf("Choisir une colonne du plateau.\n");
+	colonne = ihm_choisir_colonne();
+	ihm_printf("Choisir un nombre de pieces entre 1 et %d : ", plateau[colonne]);
 	do {
 		pieces = lire_entier(MIN_PIECES, plateau[colonne]);
 	} while (pieces == -1);	
-	ihm_scanf("%d", pieces);
 	nim_jouer_tour(plateau, nb_colonnes, colonne, pieces);
 }
 
@@ -69,9 +68,9 @@ void tour_ia(int plateau[], int nb_colonnes, double difficulte) { // Un jour Vér
 	int *choix_colonne_ptr = &choix_colonne; // Pointeur de la variable choix_colonne
 	int *choix_pieces_ptr = &choix_pieces; // Pointeur de la variables choix_pieces
 
-	ihm_printf(" ===== TOUR ORDINATEUR =====");
+	ihm_printf(" ===== TOUR ORDINATEUR =====\n");
 	nim_choix_ia(plateau, nb_colonnes, difficulte, choix_colonne_ptr, choix_pieces_ptr);
-	ihm_printf("L'ordinateur retire %d dans la colonne %d.\n", choix_pieces, choix_colonne);
+	ihm_printf("L'ordinateur retire %d pieces dans la colonne %d.\n", choix_pieces, choix_colonne);
 	nim_jouer_tour(plateau, nb_colonnes, choix_colonne, choix_pieces);
 }
 
@@ -83,12 +82,31 @@ void demarrer_jeu(double difficulte) {
 	int depart = 0; // Personne qui commence
 	int nb_colonnes = 0; // Nombre de colonnes choisies par l'utilisateur
 	int plateau[BORNE_TAB]; // Plateau de jeu
+	int *plateau_ptr = &plateau; // Pointeur du plateau de jeu
 
 	ihm_printf("Nombre de colonnes desirees du plateau entre 2 et 20 : ");
-	ihm_scanf("%d", nb_colonnes);
-
+	ihm_scanf("%d", &nb_colonnes);
+	depart = nim_qui_commence();
 	nim_plateau_init(plateau, nb_colonnes);
-		
-	depart = nim_qui_commence;
 
+	do {
+		plateau_afficher(plateau, nb_colonnes);
+		if (depart == 0) {
+			tour_humain(plateau, nb_colonnes);
+			nb_colonnes = nim_plateau_defragmenter(plateau, nb_colonnes);
+			plateau_afficher(plateau, nb_colonnes);
+			tour_ia(plateau_ptr, nb_colonnes, difficulte);
+			nb_colonnes = nim_plateau_defragmenter(plateau, nb_colonnes);
+			plateau_afficher(plateau, nb_colonnes);
+		}
+		else { // Criss Cross
+			tour_ia(plateau_ptr, nb_colonnes, difficulte);
+			nb_colonnes = nim_plateau_defragmenter(plateau, nb_colonnes);
+			plateau_afficher(plateau, nb_colonnes);
+			tour_humain(plateau, nb_colonnes);
+			nb_colonnes = nim_plateau_defragmenter(plateau, nb_colonnes);
+			plateau_afficher(plateau, nb_colonnes);
+		}
+	} while (plateau[0]!=0);
+	ihm_printf("Victore royale!!!!");
 }

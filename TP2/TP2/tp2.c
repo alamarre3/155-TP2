@@ -21,7 +21,7 @@ int main(int argc, char *argv[])
 	ihm_printf("3- Difficile\n");
 	ihm_printf("4- Quittez le jeu :(\n");
 	ihm_printf("Votre choix : ");
-	ihm_scanf("%lf", choix_menu);
+	ihm_scanf("%lf", &choix_menu);
 	
 	demarrer_jeu(choix_menu);
 
