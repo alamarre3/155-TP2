@@ -106,7 +106,7 @@ void nim_plateau_init(int plateau[], int nb_colonnes) {
 	
 
 	for (i = 0; i < nb_colonnes; i++) {
-		int plateau[i] = md_randi(BORNE_PIECE);
+		plateau[i] = md_randi(BORNE_PIECE);
 	}
 }
 
