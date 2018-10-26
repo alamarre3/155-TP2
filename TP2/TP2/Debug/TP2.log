@@ -1,8 +1,4 @@
-﻿  nim.c
-c:\users\francis\documents\github\155-tp2.2\tp2\tp2\nim.c(84): warning C4047: 'fonction' : les niveaux d'indirection de 'int *' et de 'int' sont différents
-c:\users\francis\documents\github\155-tp2.2\tp2\tp2\nim.c(84): warning C4024: 'nim_choix_ia_aleatoire' : types différents pour le paramètre formel et réel 3
-c:\users\francis\documents\github\155-tp2.2\tp2\tp2\nim.c(84): warning C4024: 'nim_choix_ia_aleatoire' : types différents pour le paramètre formel et réel 4
-  nim_io.c
+﻿  nim_io.c
 c:\users\francis\documents\github\155-tp2.2\tp2\tp2\nim_io.c(53): warning C4047: '=' : les niveaux d'indirection de 'int' et de 'int (__cdecl *)(void)' sont différents
-  Génération de code en cours...
+c:\users\francis\documents\github\155-tp2.2\tp2\tp2\nim_io.c(92): warning C4047: '=' : les niveaux d'indirection de 'int' et de 'int (__cdecl *)(void)' sont différents
   TP2.vcxproj -> C:\Users\Francis\Documents\GitHub\155-TP2.2\TP2\Debug\TP2.exe

@@ -74,3 +74,21 @@ void tour_ia(int plateau[], int nb_colonnes, double difficulte) { // Un jour Vér
 	ihm_printf("L'ordinateur retire %d dans la colonne %d.\n", choix_pieces, choix_colonne);
 	nim_jouer_tour(plateau, nb_colonnes, choix_colonne, choix_pieces);
 }
+
+// Fonction demarer_jeu
+
+void demarrer_jeu(double difficulte) {
+
+	// Déclaration des variables
+	int depart = 0; // Personne qui commence
+	int nb_colonnes = 0; // Nombre de colonnes choisies par l'utilisateur
+	int plateau[BORNE_TAB]; // Plateau de jeu
+
+	ihm_printf("Nombre de colonnes desirees du plateau entre 2 et 20 : ");
+	ihm_scanf("%d", nb_colonnes);
+
+	nim_plateau_init(plateau, nb_colonnes);
+		
+	depart = nim_qui_commence;
+
+}

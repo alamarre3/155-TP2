@@ -3,7 +3,6 @@
 
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdlib.h>
-#include "m_distributions.h"
 #define BORNE_TAB 20
 #define BORNE_PIECE 35
 #define MIN_PIECES 1
@@ -78,13 +77,11 @@ int nim_plateau_defragmenter(int plateau[], int nb_colonnes);
 Description : Fonction qui détermine quel doit être le jeu de l'ordinateur. Cette fonction
 implémente l'algorithme décrit dans l'énoncé du TP. Le choix de l'ordinateur
 sera stocké dans les références choix_colonne et choix_nb_pieces.
-
 Paramètres :
 	-
 Sorties :
 	- 
-
-*/
+	*/
 
 void nim_choix_ia(const int plateau[], int nb_colonnes, double difficulte, int *choix_colonne, int *choix_nb_pieces);
 
@@ -97,9 +94,8 @@ puis au hasard le nombre de pièces à jouer de cette colonne.
 
 PARAMETRE(S) le plateau le nombre de colone du tableau et les pointeur des choix,
 
-SORTIES aucun.
-*/
+SORTIES aucun.*/
 
 void nim_choix_ia_aleatoire(const int plateau[], int nb_colonnes, int * choix_colonne, int * choix_nb_pieces);
 
-#endif // !nim
+#endif
