@@ -115,6 +115,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="codage_numerique.c" />
     <ClCompile Include="m_distributions.c" />
     <ClCompile Include="nim.c" />
     <ClCompile Include="nim_ihm.c" />
