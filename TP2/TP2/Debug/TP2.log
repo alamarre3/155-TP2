@@ -1,5 +1,8 @@
-﻿  nim_io.c
-c:\users\francis\documents\github\155-tp2.2\tp2\tp2\nim_io.c(85): warning C4047: 'initialisation' : les niveaux d'indirection de 'int *' et de 'int (*)[20]' sont différents
+﻿  m_distributions.c
+  nim.c
+  nim_ihm.c
+  nim_io.c
+c:\users\pre-instaled\documents\github\155-tp2\tp2\tp2\nim_io.c(85): warning C4047: 'initialisation' : les niveaux d'indirection de 'int *' et de 'int (*)[20]' sont différents
   tp2.c
   Génération de code en cours...
-  TP2.vcxproj -> C:\Users\Francis\Documents\GitHub\155-TP2.2\TP2\Debug\TP2.exe
+  TP2.vcxproj -> C:\Users\Pre-instaled\Documents\GitHub\155-TP2\TP2\Debug\TP2.exe
