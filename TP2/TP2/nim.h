@@ -7,6 +7,7 @@
 #define BORNE_TAB 20
 #define BORNE_PIECE 35
 #define MIN_PIECES 1
+#define CODAGE_NB_BITS 8
 
 /*Fonction nim_plateau
 
@@ -101,5 +102,18 @@ SORTIES aucun.
 */
 
 void nim_choix_ia_aleatoire(const int plateau[], int nb_colonnes, int * choix_colonne, int * choix_nb_pieces);
+
+/********************************************************************************/
+/* Fonction construire matrice binaire
+
+Construit la matrice binaire nécessaire à l'algorithme de choix de jeu de l'ordinateur.
+Chaque ligne de la matrice correspond à une colonne du plateau de jeu et contient la représentation
+binaire du nombre de pièces présentes sur la colonne en question.
+
+PARAMETRE(S) le plateau le nombre de colone du tableau et la matrice de bit
+
+SORTIES aucun.
+*/
+void nim_construire_mat_binaire(const int plateau[], int nb_colonnes, int matrice[][CODAGE_NB_BITS]);
 
 #endif // !nim

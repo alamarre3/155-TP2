@@ -1,1 +1,4 @@
-﻿  TP2.vcxproj -> C:\Users\Pre-instaled\Documents\GitHub\155-TP2\TP2\Debug\TP2.exe
+﻿  codage_numerique.c
+c:\users\pre-instaled\documents\github\155-tp2\tp2\tp2\codage_numerique.c(59): warning C4244: '-=' : conversion de 'double' en 'int', perte possible de données
+c:\users\pre-instaled\documents\github\155-tp2\tp2\tp2\codage_numerique.c(78): warning C4013: 'printf' non défini(e) ; extern retournant int pris par défaut
+c:\users\pre-instaled\documents\github\155-tp2\tp2\tp2\codage_numerique.c(91): warning C4244: '+=' : conversion de 'double' en 'int', perte possible de données
