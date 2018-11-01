@@ -1,10 +1,12 @@
+#define _CRT_SECURE_NO_WARNINGS
 #include <stdlib.h>
 #include "nim_ihm.h"
+#include "nim_io.h"
 #include "m_distributions.h"
 
 int main(int argc, char *argv[])
 {
-	int choix_menu; 
+	double choix_menu = 0;
 
 	md_srand_interne();
 
@@ -13,8 +15,23 @@ int main(int argc, char *argv[])
 		return EXIT_FAILURE;
 	}
 	
-	ihm_printf("Votre coquille du projet fonctionne convenablement. \n");
-	
-	ihm_pause();
-	return 0;
+	do {
+		ihm_printf("Choisir la difficulte de l'ordinateur.\n");
+		ihm_printf("1- Facile\n");
+		ihm_printf("2- Moyen\n");
+		ihm_printf("3- Difficile\n");
+		ihm_printf("4- Quittez le jeu :(\n");
+		ihm_printf("Votre choix : ");
+		ihm_scanf("%lf", &choix_menu);
+
+		if (choix_menu == 4) {
+			return 0;
+		}
+
+		demarrer_jeu(choix_menu);
+		ihm_pause();
+
+		ihm_effacer_ecran();
+
+	} while (choix_menu != 4);
 }
