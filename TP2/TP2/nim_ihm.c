@@ -195,7 +195,7 @@ void ihm_afficher_entete(WINDOW *fenetre, int choix)
 	mvwprintw(fenetre, 2, 1, "                              JEU DE NIM                     ");
 	switch (choix) {
 	case 0:
-		mvwprintw(fenetre, 4, 1, "             Par Alexandre Lamare et Francis Alonzo      ");
+		mvwprintw(fenetre, 4, 1, "              Par Alexandre Lamarre et Francis Alonzo    ");
 		break;
 	case 1:
 		mvwprintw(fenetre, 4, 1, "                              Mode Facile                ");
