@@ -1,3 +1,6 @@
+#ifndef NIM_IO_H_
+#define NIM_IO_H_
+
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdlib.h>
 
@@ -60,3 +63,19 @@ void tour_humain(int plateau[], int nb_colonnes);
 		- aucune */
 
 void tour_ia(int plateau[], int nb_colonnes, double difficulte);
+
+ /* Fonction démarrer_jeu
+	Description : Fonction qui contrôle le jeu de nim: elle donne la main, tour à tour, à
+	chacun des deux joueurs et déclare le gagnant une fois la partie terminée. On quitte 
+	cette fonction quand la partie est terminée. Pour donner la main aux joueurs, on appelle
+	les fonctions tour_humain et tour_ia. Après chaque tour, cette fonction se charge de 
+	défragmenter le	plateau de jeu, de modifier la taille du plateau à l'écran et d'afficher la
+	nouvelle configuration du plateau de jeu.
+	Paramètres :
+		- difficulté (double) : Difficulté de l'ia
+	Sortie :
+		- Aucune*/
+
+void demarrer_jeu(double difficulte);
+
+#endif
