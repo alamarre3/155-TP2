@@ -18,7 +18,7 @@ void nim_plateau_init(int plateau[], int nb_colonnes) {
 int nim_qui_commence(void) {
 
 	// Déclaration de variables
-	int personne;
+	int personne; // Chiffre décidant qui commence la partie
 
 	personne = md_randint(0,1);
 

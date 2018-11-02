@@ -5,6 +5,7 @@
 #include <stdlib.h>
 #include "m_distributions.h"
 #define BORNE_TAB 20
+#define MIN_TAB 1
 #define BORNE_PIECE 35
 #define MIN_PIECES 1
 
@@ -79,7 +80,8 @@ Description : Fonction qui détermine quel doit être le jeu de l'ordinateur. Cett
 implémente l'algorithme décrit dans l'énoncé du TP. Le choix de l'ordinateur
 sera stocké dans les références choix_colonne et choix_nb_pieces.
 Paramètres :
-	-
+	- le plateau, le nombre de colonnes du plateau, la difficulté choisie, le pointeur du choix de la colonne et
+		du nombre de pièces
 Sorties :
 	- 
 	*/

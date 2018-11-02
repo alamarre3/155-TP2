@@ -3,6 +3,7 @@
 #include "nim_ihm.h"
 #include "nim_io.h"
 #include "m_distributions.h"
+#include "nim_test.h"
 
 int main(int argc, char *argv[])
 {
@@ -14,7 +15,7 @@ int main(int argc, char *argv[])
 		system("pause");
 		return EXIT_FAILURE;
 	}
-	
+
 	do {
 		ihm_printf("Choisir la difficulte de l'ordinateur.\n");
 		ihm_printf("1- Facile\n");
@@ -27,10 +28,8 @@ int main(int argc, char *argv[])
 		if (choix_menu == 4) {
 			return 0;
 		}
-
 		demarrer_jeu(choix_menu);
 		ihm_pause();
-
 		ihm_effacer_ecran();
 
 	} while (choix_menu != 4);

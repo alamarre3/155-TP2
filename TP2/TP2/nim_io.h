@@ -3,6 +3,9 @@
 
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdlib.h>
+#include "nim_ihm.h"
+#include "nim.h"
+#include "nim_test.h"
 
 /*=====MODULE NIM_IO======
 Ce module inclut les fonctions assurant l’interactivité du jeu avec
@@ -74,7 +77,7 @@ void tour_ia(int plateau[], int nb_colonnes, double difficulte);
 	Paramètres :
 		- difficulté (double) : Difficulté de l'ia
 	Sortie :
-		- Aucune*/
+		- aucune*/
 
 void demarrer_jeu(double difficulte);
 

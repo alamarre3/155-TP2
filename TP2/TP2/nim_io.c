@@ -1,8 +1,6 @@
 /*=====MODULE NIM_IO======*/
 
 #include "nim_io.h"
-#include "nim_ihm.h"
-#include "nim.h"
 
 // Fonction lire_entier
 
@@ -16,7 +14,7 @@ int lire_entier(int min, int max) {
 		return entier;
 	}
 	else {
-		ihm_printf("Valeur non valide.\n Veuillez saisir une valeur dans l'intervalle %d et %d.\n", min, max);
+		ihm_printf("Valeur non valide.\nVeuillez saisir une valeur dans l'intervalle %d et %d.\n", min, max);
 		return -1;
 	}
 }
@@ -48,7 +46,7 @@ void tour_humain(int plateau[], int nb_colonnes) {
 	int colonne; // Colonne choisi par l'usager
 	int pieces = -1; // Nombre de pièces saisies par l'usager
 
-	ihm_printf(" ===== TOUR HUMAIN =====\n");
+	ihm_printf(" \n===== TOUR HUMAIN =====\n");
 	ihm_printf("Choisir une colonne du plateau.\n");
 	colonne = ihm_choisir_colonne();
 	ihm_printf("Choisir un nombre de pieces entre 1 et %d : ", plateau[colonne]);
@@ -68,7 +66,7 @@ void tour_ia(int plateau[], int nb_colonnes, double difficulte) { // Un jour Vér
 	int *choix_colonne_ptr = &choix_colonne; // Pointeur de la variable choix_colonne
 	int *choix_pieces_ptr = &choix_pieces; // Pointeur de la variables choix_pieces
 
-	ihm_printf(" ===== TOUR ORDINATEUR =====\n");
+	ihm_printf("\n ===== TOUR ORDINATEUR =====\n");
 	nim_choix_ia(plateau, nb_colonnes, difficulte, choix_colonne_ptr, choix_pieces_ptr);
 	ihm_printf("L'ordinateur retire %d pieces dans la colonne %d.\n", choix_pieces, choix_colonne);
 	nim_jouer_tour(plateau, nb_colonnes, choix_colonne, choix_pieces);
@@ -84,9 +82,24 @@ void demarrer_jeu(double difficulte) {
 	int plateau[BORNE_TAB]; // Plateau de jeu
 	int *plateau_ptr = &plateau; // Pointeur du plateau de jeu
 	int victore = 0; // Définit la personne qui a remporté le jeu
+	int i; // Valeur d'incrémentation
+	
+	for (i = 0; i < BORNE_TAB; i++) {
+		plateau[i] = 0;
+	}
+	
+	ihm_printf("Nombre de colonnes desirees du plateau entre %d et %d : ", MIN_TAB, BORNE_TAB);
+	do {
+		nb_colonnes = lire_entier(MIN_TAB, BORNE_TAB);
+	} while (nb_colonnes == -1);
+	
+	nim_test_plateau_init(plateau, nb_colonnes);
+	nim_test_qui_commence();
+	nim_test_jouer_tour();
+	nim_test_plateau_supprimer_colonne();
 
-	ihm_printf("Nombre de colonnes desirees du plateau entre 2 et 20 : ");
-	ihm_scanf("%d", &nb_colonnes);
+	system("pause");
+
 	depart = nim_qui_commence();
 	nim_plateau_init(plateau, nb_colonnes);
 	plateau_afficher(plateau, nb_colonnes);
