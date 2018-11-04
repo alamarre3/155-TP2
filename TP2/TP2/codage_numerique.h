@@ -1,7 +1,6 @@
 #ifndef CODAGE_NUMERIQUE_H
 #define CODAGE_NUMERIQUE_H
 
-/*pour le h*/
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdlib.h>
 #include "m_distributions.h"
@@ -10,7 +9,7 @@
 #define EXPOSANT_BITS (pow(2,CODAGE_NB_BITS-1))
 
 
- /*Fonction codage dec to bin
+ /*Fonction codage DECIMAL à BINAIRE
 
  Traduit un nombre décimal en binaire. Le résultat est stocké dans le tableau “resultat” et le nombre de bits utilisés est renvoyé.
  Le codage du nombre décimal doit se faire en un maximum de CODAGE_NB_BITS (fixée à 8). La fonction renvoie le nombre de bits qui a
