@@ -115,6 +115,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="codage_numerique.c" />
     <ClCompile Include="m_distributions.c" />
     <ClCompile Include="nim.c" />
     <ClCompile Include="nim_ihm.c" />
@@ -123,6 +124,7 @@
     <ClCompile Include="tp2.c" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="codage_numerique.h" />
     <ClInclude Include="curses.h" />
     <ClInclude Include="curspriv.h" />
     <ClInclude Include="m_distributions.h" />

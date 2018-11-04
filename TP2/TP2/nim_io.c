@@ -93,10 +93,7 @@ void demarrer_jeu(double difficulte) {
 		nb_colonnes = lire_entier(MIN_TAB, BORNE_TAB);
 	} while (nb_colonnes == -1);
 	
-	nim_test_plateau_init(plateau, nb_colonnes);
-	nim_test_qui_commence();
-	nim_test_jouer_tour();
-	nim_test_plateau_supprimer_colonne();
+	nim_test();
 
 	system("pause");
 
@@ -124,10 +121,10 @@ void demarrer_jeu(double difficulte) {
 	} while (plateau[0] != 0);
 
 	if (victore == 0) {
-		ihm_printf("=== VICTOIRE DE L HUMAIN ===\n");
+		ihm_printf("\n=== VICTOIRE DE L HUMAIN ===\n");
 	}
 	else {
-		ihm_printf("=== VICTOIRE DE L ORDINATEUR ===\n YOU SUCKS!!!!\n");
+		ihm_printf("\n=== VICTOIRE DE L ORDINATEUR ===\n YOU SUCKS!!!!\n");
 	}
 	return;
 }
