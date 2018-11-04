@@ -120,6 +120,7 @@
     <ClCompile Include="nim.c" />
     <ClCompile Include="nim_ihm.c" />
     <ClCompile Include="nim_io.c" />
+    <ClCompile Include="nim_test.c" />
     <ClCompile Include="tp2.c" />
   </ItemGroup>
   <ItemGroup>
@@ -130,6 +131,7 @@
     <ClInclude Include="nim.h" />
     <ClInclude Include="nim_ihm.h" />
     <ClInclude Include="nim_io.h" />
+    <ClInclude Include="nim_test.h" />
   </ItemGroup>
   <ItemGroup>
     <Object Include="curses\addch.obj" />

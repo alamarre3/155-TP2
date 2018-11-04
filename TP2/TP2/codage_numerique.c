@@ -1,4 +1,4 @@
-
+// ===== MODULE CODAGE_NUMÉRIQUE=====
 #include"nim.h"
 #include"codage_numerique.h"
 

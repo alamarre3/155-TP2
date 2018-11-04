@@ -51,7 +51,7 @@ void ihm_surligner(int colonne, int on);
 IHM_AFFICHER_ENTETE
 Affiche le message dans la zone de titre, typiquement "Jeu de NIM".
 */
-void ihm_afficher_entete(WINDOW *fenetre, int choix);
+void ihm_afficher_entete(WINDOW *fenetre);
 
 /*
 IHM_VERIFIER_TAILLE_PLATEAU
@@ -80,7 +80,7 @@ Définition des fonctions publiques et privées
 
 //Initialise la console en mode ncurses, dessine les 3 zones et définit le nombre de lignes
 //et colonnes du plateua de jeu.
-int ihm_init_ecran(int lignes, int colonnes,int choix)
+int ihm_init_ecran(int lignes, int colonnes)
 {
 	WINDOW *fenetre_entete; //Fenetre dans laquelle on affiche le titre du jeu.
 
@@ -122,11 +122,11 @@ int ihm_init_ecran(int lignes, int colonnes,int choix)
 	init_pair(IHM_COULEUR_MESSAGE, COLOR_RED, COLOR_WHITE);
 
 	//Création de la fenetre entête
-	fenetre_entete = ihm_creer_fenetre(6, 70, 0, 0, TRUE);
-	ihm_afficher_entete(fenetre_entete,choix);
+	fenetre_entete = ihm_creer_fenetre(4, 70, 0, 0, TRUE);
+	ihm_afficher_entete(fenetre_entete);
 
 	//Création et configuration de la zone de texte
-	zone_texte = ihm_creer_fenetre(34, 68, 6, 1, FALSE);
+	zone_texte = ihm_creer_fenetre(34, 68, 5, 1, FALSE);
 	scrollok(zone_texte, TRUE);
 
 	//Création et configuration de la zone du plateau de jeu
@@ -190,23 +190,9 @@ void ihm_effacer_plateau(void)
 
 
 //Affiche le nom du jeu dans la zone de titre
-void ihm_afficher_entete(WINDOW *fenetre, int choix)
+void ihm_afficher_entete(WINDOW *fenetre)
 {
 	mvwprintw(fenetre, 2, 1, "                              JEU DE NIM                     ");
-	switch (choix) {
-	case 0:
-		mvwprintw(fenetre, 4, 1, "              Par Alexandre Lamarre et Francis Alonzo    ");
-		break;
-	case 1:
-		mvwprintw(fenetre, 4, 1, "                              Mode Facile                ");
-		break;
-	case 2:
-		mvwprintw(fenetre, 4, 1, "                              Mode Moyen                 ");
-		break;
-	case 3:
-		mvwprintw(fenetre, 4, 1, "                            Mode Difficile               ");
-		break;
-	}
 	wrefresh(fenetre);
 }
 

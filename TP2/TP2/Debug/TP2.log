@@ -1,2 +1,10 @@
-﻿  nim_ihm.c
-  TP2.vcxproj -> C:\Users\Pre-instaled\Documents\GitHub\155-TP2\TP2\Debug\TP2.exe
+﻿  nim_io.c
+c:\users\francis\documents\github\155-tp2.2\tp2\tp2\nim_io.c(83): warning C4047: 'initialisation' : les niveaux d'indirection de 'int *' et de 'int (*)[20]' sont différents
+  nim_test.c
+c:\users\francis\documents\github\155-tp2.2\tp2\tp2\nim_test.c(7): warning C4026: fonction déclarée avec une liste de paramètres formels
+c:\users\francis\documents\github\155-tp2.2\tp2\tp2\nim_test.c(160): warning C4047: 'fonction' : les niveaux d'indirection de 'const int *' et de 'int [1][8]' sont différents
+c:\users\francis\documents\github\155-tp2.2\tp2\tp2\nim_test.c(160): warning C4024: 'codage_bin2dec' : types différents pour le paramètre formel et réel 1
+c:\users\francis\documents\github\155-tp2.2\tp2\tp2\nim_test.c(223): warning C4101: 'resultat' : variable locale non référencée
+  tp2.c
+  Génération de code en cours...
+  TP2.vcxproj -> C:\Users\Francis\Documents\GitHub\155-TP2.2\TP2\Debug\TP2.exe

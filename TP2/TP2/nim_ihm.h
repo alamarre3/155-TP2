@@ -94,7 +94,7 @@ Paramètres:
 nb_lignes: le nombre de lignes du plateau de jeu
 nb_colonnes: le nombre de colonnes du plateau de jeu
 */
-int ihm_init_ecran(int nb_lignes, int nb_colonnes, int choix);
+int ihm_init_ecran(int nb_lignes, int nb_colonnes);
 
 /*
 IHM_AJOUTER_PIECE

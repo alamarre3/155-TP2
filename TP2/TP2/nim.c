@@ -94,10 +94,11 @@ void nim_choix_ia_aleatoire(const int plateau[], int nb_colonnes, int *choix_col
 
 void nim_construire_mat_binaire(const int plateau[], int nb_colonnes, int matrice[][CODAGE_NB_BITS]) {
 
-	int bit;
-	int i;
-	int j;
-	int temp[8];
+	// Déclaration des variables
+	int bit; // Variable  pour le transfert de décimal à binaire
+	int i; // Variable d'incrémentation
+	int j; // Variable d'incrémentation
+	int temp[8]; // Tableau temporaire binaire
 
 	for (i = 0; i < nb_colonnes; i++) {
 		bit = codage_dec2bin(plateau[i], temp);
@@ -109,11 +110,13 @@ void nim_construire_mat_binaire(const int plateau[], int nb_colonnes, int matric
 	}
 }
 
-/*Fonction Somme de matrice binaire*/
+/*Fonction nim_sommes_mat_binaire*/
+
 void nim_sommes_mat_binaire(const int matrice[][CODAGE_NB_BITS], int nb_lignes, int sommes[]) {
 
-	int i;
-	int j;
+	// Déclaration des variables
+	int i; // Variable d'incrémentation
+	int j; // Variable d'incrémentation
 
 	for (i = 0; i < CODAGE_NB_BITS; i++) {
 		sommes[i] = 0;
@@ -126,11 +129,13 @@ void nim_sommes_mat_binaire(const int matrice[][CODAGE_NB_BITS], int nb_lignes, 
 	}
 }
 
-/*Fonction premier nombre impaire*/
+/*Fonction nim_position_premier_impaire*/
+
 int nim_position_premier_impaire(const int tab[]) {
 
-	int i;
-	int indice = -1;
+	// Déclaration des variables
+	int i; // Variable d'incrémentation
+	int indice = -1; // Variable retournée en cas d'erreur
 
 	for (i = 0; i < CODAGE_NB_BITS; i++) {
 		if (tab[i] % 2 != 0) {
@@ -141,7 +146,7 @@ int nim_position_premier_impaire(const int tab[]) {
 	return indice;
 }
 
-/*Fonction nim_choix_ai*/
+/*Fonction nim_choix_ia*/
 
 void nim_choix_ia(const int plateau[], int nb_colonnes, double difficulte, int *choix_colonne, int *choix_nb_pieces) {
 
@@ -171,7 +176,7 @@ void nim_choix_ia(const int plateau[], int nb_colonnes, double difficulte, int *
 	}
 
 	/*continue l'algo seulement si le jeu est impaire*/
-	if (premier_impaire != -1 && (difficulte == 3 || resultat == 1)) // frank si tu m'obstine lis sa avant https://fr.wikipedia.org/wiki/Alg%C3%A8bre_de_Boole_(logique)
+	if (premier_impaire != -1 && (difficulte == 3 || resultat == 1))
 	{
 
 		/*trouver dans quelle colone jouer*/
@@ -195,7 +200,6 @@ void nim_choix_ia(const int plateau[], int nb_colonnes, double difficulte, int *
 
 		/*Convertire la valeur binaire en decimale, la soustraire au nombre present dans la colone et revoyer le nombre de jeton a enlever*/
 		*choix_nb_pieces = plateau[*choix_colonne]-codage_bin2dec(temp);
-
 	}
 	/*si le choix de dificulter est a 1, que le mode moyen ne fait pas lalgo ou que le jeu est pair, effectuer aléatoirement*/
 	if(difficulte==1 || premier_impaire == -1 || resultat == 0){
@@ -203,10 +207,7 @@ void nim_choix_ia(const int plateau[], int nb_colonnes, double difficulte, int *
 		*choix_nb_pieces = md_randi(plateau[*choix_colonne]);
 		//nim_choix_ia_aleatoire(plateau, nb_colonnes, *choix_colonne, *choix_nb_pieces);
 	}
-
-    
-
-	}
+}
 	
 
 
