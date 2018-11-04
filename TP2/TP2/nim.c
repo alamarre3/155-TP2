@@ -14,12 +14,12 @@ void nim_plateau_init(int plateau[], int nb_colonnes) {
 	}
 }
 
-/*Fonction nim_qui_commence*/
+// Fonction nim_qui_commence
 
 int nim_qui_commence(void) {
 
 	// Déclaration de variables
-	int personne;
+	int personne; // Variable pour le choix
 
 	personne = md_randint(0,1);
 
@@ -27,11 +27,12 @@ int nim_qui_commence(void) {
 }
 
 
-/*Fonction tour*/
+// Fonction nim_jouer_tour
+
 int nim_jouer_tour(int plateau[], int nb_colonnes, int colonne, int nb_pieces){
 
 	// Déclaration de variable
-	int validite;
+	int validite; // Variable de renvoit pour le choix
 
 	if (plateau[colonne] - nb_pieces >= 0 && colonne < nb_colonnes) {
 		plateau[colonne] -= nb_pieces;
@@ -44,10 +45,12 @@ int nim_jouer_tour(int plateau[], int nb_colonnes, int colonne, int nb_pieces){
 }
 
 
-/*fonction supprimer tableau*/
+// Fonction nim_plateau_supprimer_colonne
+
 void nim_plateau_supprimer_colonne(int plateau[], int nb_colonnes, int col_a_supprimer) {
 
-	int i;
+	// Déclaration des variables
+	int i; // Variable d'incrémentation
 
 	for (i = col_a_supprimer; i < nb_colonnes-1; i++) {
 
@@ -58,13 +61,14 @@ void nim_plateau_supprimer_colonne(int plateau[], int nb_colonnes, int col_a_sup
 }
 
 
-/*Fonction defragmenter.*/
+// Fonction nim_plateau_defragmenter
+
 int nim_plateau_defragmenter(int plateau[], int nb_colonnes) {
 
 // Déclaration de variable.
-	int i;
-	int compteur=0; 
-	int nv_nb_colonnes;
+	int i; // Variable d'incrémentation
+	int compteur=0; // Compteur pour le nombre de colonne à retirer
+	int nv_nb_colonnes; // Nouveau nombre de colonnes
 
 	for (i = 0; i < nb_colonnes; i++) {
 
@@ -77,7 +81,7 @@ int nim_plateau_defragmenter(int plateau[], int nb_colonnes) {
 	return nv_nb_colonnes;
 }
 
-/*Fonction nombre aléatroie.*/
+// Fonction nim_choix_ia_aleatoire
 
 void nim_choix_ia_aleatoire(const int plateau[], int nb_colonnes, int *choix_colonne, int *choix_nb_pieces) {
 
@@ -86,7 +90,8 @@ void nim_choix_ia_aleatoire(const int plateau[], int nb_colonnes, int *choix_col
 	
 }
 
-/*Fonction construire matrice binaire*/
+// Fonction nim_construire_mat_binaire
+
 void nim_construire_mat_binaire(const int plateau[], int nb_colonnes, int matrice[][CODAGE_NB_BITS]) {
 
 	int bit;
@@ -95,14 +100,13 @@ void nim_construire_mat_binaire(const int plateau[], int nb_colonnes, int matric
 	int temp[8];
 
 	for (i = 0; i < nb_colonnes; i++) {
-		bit = codage_dec2bin(plateau[i],temp);
+		bit = codage_dec2bin(plateau[i], temp);
 
 		for (j = 0; j < CODAGE_NB_BITS; j++) {
 			matrice[i][j] = temp[j];
 
+		}
 	}
-	}
-
 }
 
 /*Fonction Somme de matrice binaire*/
