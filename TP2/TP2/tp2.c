@@ -1,8 +1,6 @@
-#define _CRT_SECURE_NO_WARNINGS
-#include <stdlib.h>
+
 #include "nim_ihm.h"
 #include "nim_io.h"
-#include "m_distributions.h"
 #include "nim_test.h"
 
 int main(int argc, char *argv[])
