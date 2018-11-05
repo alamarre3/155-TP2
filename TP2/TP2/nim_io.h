@@ -14,7 +14,6 @@ l’usager. Il comprend les fonctions permettant de gérer le jeu (alterner entre l
 mesure. Les fonctions de ce module feront souvent appel aux fonctions du module « nim » ainsi qu’aux
 fonctions du module « nim_ihm » décrit ci-dessous.*/
 
-
 /* Fonction lire_entier
 	Description : Demande à l'usager de saisir un entier entre les bornes min et max
 	(inclusivement). La fonction doit valider la saisie et redemander à l'usager
@@ -36,8 +35,7 @@ int lire_entier(int min, int max);
 		- plateau (const entier) : plateau de jeu
 		- nb_colonnes (entier) : nombre de colonnes utilisés par le jeu
 	Sortie :
-		- aucune
-*/
+		- aucune*/
 
 void plateau_afficher(const int plateau[], int nb_colonnes);
 
