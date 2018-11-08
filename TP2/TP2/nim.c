@@ -105,7 +105,6 @@ void nim_construire_mat_binaire(const int plateau[], int nb_colonnes, int matric
 
 		for (j = 0; j < CODAGE_NB_BITS; j++) {
 			matrice[i][j] = temp[j];
-
 		}
 	}
 }
@@ -124,8 +123,6 @@ void nim_sommes_mat_binaire(const int matrice[][CODAGE_NB_BITS], int nb_lignes, 
 		for (j = 0; j < nb_lignes; j++) {
 			sommes[i] += matrice[j][i];
 		}
-
-
 	}
 }
 

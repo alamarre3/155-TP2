@@ -4,6 +4,7 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdlib.h>
 #include "m_distributions.h"
+#include "codage_numerique.h"
 #define BORNE_TAB 20
 #define MIN_TAB 1
 #define BORNE_PIECE 35
@@ -100,5 +101,9 @@ PARAMETRE(S) le plateau le nombre de colone du tableau et les pointeur des choix
 SORTIES aucun.*/
 
 void nim_choix_ia_aleatoire(const int plateau[], int nb_colonnes, int * choix_colonne, int * choix_nb_pieces);
+
+void nim_construire_mat_binaire(const int plateau[], int nb_colonnes, int matrice[][CODAGE_NB_BITS]);
+void nim_sommes_mat_binaire(const int matrice[][CODAGE_NB_BITS], int nb_lignes, int sommes[]);
+int nim_position_premier_impaire(const int tab[]);
 
 #endif

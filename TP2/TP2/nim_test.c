@@ -8,25 +8,14 @@ void nim_test_plateau_init() {
 
 	// Déclaration de variables
 	int i; // Variable d'incrémentation
-	int test = 1; // Variable utilisé pour la vérification de la fonction
 	int plateau[BORNE_TAB]; // Plateau de jeu pour le test
 	int nb_colonnes = BORNE_TAB; // Nombre de colonnes du tableau
 
-	if (nb_colonnes > BORNE_TAB) {
-		test = 0;
-	}
+	nim_plateau_init(plateau, nb_colonnes);
 
 	for (i = 0; i < nb_colonnes; i++) {
-		plateau[i] = md_randi(BORNE_PIECE);
-		if (plateau[i] < 1 || plateau[i]>35) {
-			test = 0;
-		}
+		assert(plateau[i] >= 1 && plateau[i] <= 35);
 	}
-
-	if (plateau[nb_colonnes + 1] == 0 && nb_colonnes > BORNE_TAB) {
-		test = 0;
-	}
-	assert(test);
 }
 
 // Test de la fonction nim_qui_commence
@@ -34,10 +23,9 @@ void nim_test_plateau_init() {
 void nim_test_qui_commence(void) {
 
 	// Déclaration de variables
-	int test = 1; // Variable utilisé pour la vérification de la fonction
 	int personne; // Chiffre décidant qui commence la partie
 
-	personne = md_randint(0, 1);
+	personne = nim_qui_commence();
 
 	assert(personne == 0 || personne ==1);
 }
@@ -55,13 +43,9 @@ void nim_test_jouer_tour() {
 	nim_plateau_init(plateau, BORNE_TAB);
 	nb_pieces = plateau[7];
 	colonne = 7;
-	if (plateau[colonne] - nb_pieces >= 0 && colonne < nb_colonnes) {
-		plateau[colonne] -= nb_pieces;
-	}
-	else {
-		assert(0);
-	}
-
+	
+	nim_jouer_tour(plateau, nb_colonnes, colonne, nb_pieces);
+	
 	assert(plateau[colonne]==0);
 }
 
@@ -71,22 +55,13 @@ void nim_test_plateau_supprimer_colonne() {
 
 	// Déclaration des variables
 	int plateau[BORNE_TAB]; // Plateau de jeu
-	int col_a_supprimer; // Variable pour la colonne à supprimer
+	int col_a_supprimer = 0; // Variable pour la colonne à supprimer
 	int i; // Variable d'incrémentation
-	int nb_colonnes; // Variable utilisée pour le nombre de colonnes
+	int nb_colonnes = 2; // Variable utilisée pour le nombre de colonnes
 
-	for (i = 0; i < BORNE_TAB; i++) {
-		plateau[i] = 0;
-	}
-	nb_colonnes = 2;
-	col_a_supprimer = 0;
 	nim_plateau_init(plateau, nb_colonnes);
+	nim_plateau_supprimer_colonne(plateau, nb_colonnes, col_a_supprimer);
 	
- 	for (i = col_a_supprimer; i < nb_colonnes - 1; i++) {
-		plateau[i] = plateau[i + 1];
-	}
-	plateau[nb_colonnes] = 0;
-
 	assert(plateau[col_a_supprimer]==plateau[col_a_supprimer+1]);
 }
 
@@ -97,22 +72,13 @@ void nim_test_plateau_defragmenter() {
 	// Déclaration des variables
 	int i; // Variable d'incrémentation
 	int plateau[BORNE_TAB]; // Plateau de jeu
-	int compteur = 0; // Compteur de colonnes à supprimer
 	int nb_colonnes = BORNE_TAB; // Nombre de colonnes du plateau de jeu
-	int nv_nb_colonnes; // Nouveau nombre de colonnes après la défragmentation
 
 	nim_plateau_init(plateau, BORNE_TAB);
 	plateau[6] = 0;
+	nb_colonnes = nim_plateau_defragmenter(plateau, nb_colonnes);
 
-	for (i = 0; i < nb_colonnes; i++) {
-
-		if (plateau[i] == 0) {
-			nim_plateau_supprimer_colonne(plateau, nb_colonnes, i);
-			compteur++;
-		}
-	}
-	nv_nb_colonnes = nb_colonnes - compteur;
-	assert(nv_nb_colonnes==19);
+	assert(nb_colonnes==19);
 }
 
 // Test de la fonction nim_choix_ia_aleatoire
@@ -128,9 +94,7 @@ void nim_test_choix_ia_aleatoire() {
 	int nb_colonnes = BORNE_TAB; // Nombre de colonnes du plateau de jeu
 
 	nim_plateau_init(plateau, nb_colonnes);
-
-	*ptr_choix_colonne = md_randi(nb_colonnes) - 1;
-	*ptr_choix_nb_pieces = md_randi(plateau[*ptr_choix_colonne]);
+	nim_choix_ia_aleatoire(plateau, nb_colonnes, ptr_choix_colonne, ptr_choix_nb_pieces);
 
 	assert(plateau[choix_colonne] >= *ptr_choix_nb_pieces);
 	assert(*ptr_choix_colonne <= BORNE_TAB);
@@ -142,21 +106,11 @@ void nim_test_construire_mat_binaire() {
 
 	// Déclaration des variables
 	int plateau[1] = { 22 }; // Plateau de jeu pour le test
-	int bit; // Variable  pour le transfert de décimal à binaire
-	int i; // Variable d'incrémentation
-	int j; // Variable d'incrémentation
-	int temp[8]; // Tableau temporaire binaire
 	int matrice[1][CODAGE_NB_BITS]; // Matrice binaire
 	int nb_colonnes = 1; // Nombre de colonnes du plateau de jeu
 
-	for (i = 0; i < nb_colonnes; i++) {
-		bit = codage_dec2bin(plateau[i], temp);
-
-		for (j = 0; j < CODAGE_NB_BITS; j++) {
-			matrice[i][j] = temp[j];
-
-		}
-	}
+	nim_construire_mat_binaire(plateau, nb_colonnes, matrice);
+	
 	assert(codage_bin2dec(matrice) == 22);
 }
 
@@ -171,13 +125,8 @@ void nim_test_sommes_mat_binaire() {
 	int i; // Variable d'incrémentation
 	int j; // Variable d'incrémentation
 
-	for (i = 0; i < CODAGE_NB_BITS; i++) {
-		sommes[i] = 0;
+	nim_sommes_mat_binaire(matrice, nb_lignes, sommes);
 
-		for (j = 0; j < nb_lignes; j++) {
-			sommes[i] += matrice[j][i];
-		}
-	}
 	assert(sommes[0] == 3);
 }
 
@@ -188,28 +137,15 @@ void nim_test_position_premier_impaire() {
 	// Déclaration des variables
 	int tab[CODAGE_NB_BITS] = { 4,4,4,4,4,4,4,4 }; // Tableau de position pour le test
 	int i; // Variable d'incrémentation
-	int indice = -1; // Variable retournée en cas d'erreur
+	int indice; // Variable retournée en cas d'erreur
 
 	tab[4] = 3;
-
-	for (i = 0; i < CODAGE_NB_BITS; i++) {
-		if (tab[i] % 2 != 0) {
-			indice = i;
-			break;
-		}
-	}
+	indice = nim_position_premier_impaire(tab);
 	assert(indice == 4);
 
 	tab[4] = 2;
-	indice = -1;
-
-	for (i = 0; i < CODAGE_NB_BITS; i++) {
-		if (tab[i] % 2 != 0) {
-			indice = i;
-			break;
-		}
-	}
-	assert(indice = -1);
+	indice = nim_position_premier_impaire(tab);
+	assert(indice == -1);
 }
 
 // Test de la fonction nim_choix_ia
@@ -240,7 +176,6 @@ void nim_test_choix_ia() {
 // Fonction pour lancer tous les test
 
 void nim_test() {
-
 	nim_test_plateau_init();
 	nim_test_qui_commence();
 	nim_test_jouer_tour();

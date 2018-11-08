@@ -1,15 +1,10 @@
-﻿  codage_numerique.c
-c:\users\francis\documents\github\155-tp2.2\tp2\tp2\codage_numerique.c(16): warning C4244: '-=' : conversion de 'double' en 'int', perte possible de données
-c:\users\francis\documents\github\155-tp2.2\tp2\tp2\codage_numerique.c(35): warning C4013: 'printf' non défini(e) ; extern retournant int pris par défaut
-c:\users\francis\documents\github\155-tp2.2\tp2\tp2\codage_numerique.c(48): warning C4244: '+=' : conversion de 'double' en 'int', perte possible de données
-  nim.c
-  nim_ihm.c
-  nim_io.c
-c:\users\francis\documents\github\155-tp2.2\tp2\tp2\nim_io.c(83): warning C4047: 'initialisation' : les niveaux d'indirection de 'int *' et de 'int (*)[20]' sont différents
-  nim_test.c
-c:\users\francis\documents\github\155-tp2.2\tp2\tp2\nim_test.c(160): warning C4047: 'fonction' : les niveaux d'indirection de 'const int *' et de 'int [1][8]' sont différents
-c:\users\francis\documents\github\155-tp2.2\tp2\tp2\nim_test.c(160): warning C4024: 'codage_bin2dec' : types différents pour le paramètre formel et réel 1
-c:\users\francis\documents\github\155-tp2.2\tp2\tp2\nim_test.c(223): warning C4101: 'resultat' : variable locale non référencée
-  tp2.c
-  Génération de code en cours...
+﻿  nim_test.c
+c:\users\francis\documents\github\155-tp2.2\tp2\tp2\nim_test.c(59): warning C4101: 'i' : variable locale non référencée
+c:\users\francis\documents\github\155-tp2.2\tp2\tp2\nim_test.c(73): warning C4101: 'i' : variable locale non référencée
+c:\users\francis\documents\github\155-tp2.2\tp2\tp2\nim_test.c(114): warning C4047: 'fonction' : les niveaux d'indirection de 'const int *' et de 'int [1][8]' sont différents
+c:\users\francis\documents\github\155-tp2.2\tp2\tp2\nim_test.c(114): warning C4024: 'codage_bin2dec' : types différents pour le paramètre formel et réel 1
+c:\users\francis\documents\github\155-tp2.2\tp2\tp2\nim_test.c(126): warning C4101: 'j' : variable locale non référencée
+c:\users\francis\documents\github\155-tp2.2\tp2\tp2\nim_test.c(125): warning C4101: 'i' : variable locale non référencée
+c:\users\francis\documents\github\155-tp2.2\tp2\tp2\nim_test.c(139): warning C4101: 'i' : variable locale non référencée
+c:\users\francis\documents\github\155-tp2.2\tp2\tp2\nim_test.c(159): warning C4101: 'resultat' : variable locale non référencée
   TP2.vcxproj -> C:\Users\Francis\Documents\GitHub\155-TP2.2\TP2\Debug\TP2.exe
